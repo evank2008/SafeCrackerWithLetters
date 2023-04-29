@@ -1,19 +1,7 @@
 //    Copyright (c) The League of Amazing Programmers 2013-2019
 //    Level 0
 
-/*
- HOW TO ADD ANOTHER LETTER
- 1. Add another string under the SafeCracker class. Name it l
-  and then the next number after the previous one.
- 2.In the cracker() void, copy from the word 'for' at the top to the bracket right after the comment,
- "This bracket is for the switch".
- 3. Paste above the previous for loop.
- 4. In the switch, MANUALLY :( change EACH :( instance of the l variable and the dig variable to the next number up.
- :(
- 5. At the bottom of the cracker() void, find the line that runs the tryCode() void. Add in the new l int.
- 6. Add a new bracket at the end.
- 
- */
+
 package _02_methods._2_safe_cracker_with_letters;
 
 import java.io.File;
@@ -27,7 +15,20 @@ String l1 = null;
 String l2 = null;
 String l3 = null;
 String l4 = null;
+String l5 = null;
+/*
+HOW TO ADD ANOTHER LETTER
+1. Add another string under the SafeCracker class above this comment. Name it l
+ and then the next number after the previous one.
+2.In the cracker() void, copy from the word 'for' at the top to the bracket right after the comment,
+"This bracket is for the switch".
+3. Paste above the previous for loop.
+4. In the switch, MANUALLY :( change EACH :( instance of the l variable and the dig variable to the next number up.
+:(
+5. At the bottom of the cracker() void, find the line that runs the tryCode() void. Add in the new l int.
+6. Add a new bracket at the end.
 
+*/
 
 	/***********  SOUND ***************
 	 * Some computers are unable to play sounds. 
@@ -45,6 +46,7 @@ String l4 = null;
 
 	
 	void crackTheSafe() {
+		tryCode("bazinga");
 		System.out.println("cracksafe ran");
 		JOptionPane.showMessageDialog(null, "Oh no! The safe is locked!");
 		JOptionPane.showMessageDialog(null, "Initialize safecracker?");
@@ -53,6 +55,93 @@ String l4 = null;
 
 	void cracker() {
 		System.out.println("cracker ran");
+		for(int dig5 = 0;dig5<=26;) {
+			switch (dig5) {
+			case 0:
+				l5="";
+				break;
+			case 1:
+				l5 = "a";
+				break;
+			case 2:
+				l5 = "b";
+				break;
+			case 3:
+				l5 = "c";
+				break;
+			case 4:
+				l5 = "d";
+				break;
+			case 5:
+				l5 = "e";
+				break;
+			case 6:
+				l5 = "f";
+				break;
+			case 7:
+				l5 = "g";
+				break;
+			case 8:
+				l5 = "h";
+				break;
+			case 9:
+				l5 = "i";
+				break;
+			case 10:
+				l5 = "j";
+				break;
+			case 11:
+				l5 = "k";
+				break;
+			case 12:
+				l5 = "l";
+				break;
+			case 13:
+				l5 = "m";
+				break;
+			case 14:
+				l5 = "n";
+				break;
+			case 15:
+				l5 = "o";
+				break;
+			case 16:
+				l5 = "p";
+				break;
+			case 17:
+				l5 = "q";
+				break;
+			case 18:
+				l5 = "r";
+				break;
+			case 19:
+				l5 = "s";
+				break;
+			case 20:
+				l5 = "t";
+				break;
+			case 21:
+				l5 = "u";
+				break;
+			case 22:
+				l5 = "v";
+				break;
+			case 23:
+				l5 = "w";
+				break;
+			case 24:
+				l5 = "x";
+				break;
+			case 25:
+				l5 = "y";
+				break;
+			case 26:
+				l5 = "z";
+				break;
+			default:
+				System.out.println("error");
+				//this bracket is for the switch
+			} 
 		for(int dig4 = 0;dig4<=26;) {
 			switch (dig4) {
 			case 0:
@@ -400,7 +489,7 @@ String l4 = null;
 					System.out.println("error");
 					//this bracket is for the switch
 				}
-				tryCode(l4+l3+l2+l1);
+				tryCode(l5+l4+l3+l2+l1);
 				dig1++;
 				}
 			//this bracket is for digit 1
@@ -411,6 +500,9 @@ String l4 = null;
 		}
 	dig4++;
 		}
+		dig5++;
+		}
+		JOptionPane.showMessageDialog(null, "Amazing! I couldn't crack your code.");
 	}
 	
 	//this bracket is for the void oneLetter
@@ -419,7 +511,7 @@ String l4 = null;
 	 void tryCode(String guess) {
 		System.out.println("trying " + guess);
 
-		String secretCode = "zhaf";
+		String secretCode = "civic";
 
 		if (guess.equals(secretCode)) {
 			JOptionPane.showMessageDialog(null, "Congratulations! You cracked the safe with " + guess);
