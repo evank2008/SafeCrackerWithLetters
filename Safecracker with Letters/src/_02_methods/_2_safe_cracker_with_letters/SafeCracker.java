@@ -16,6 +16,7 @@ String l2 = null;
 String l3 = null;
 String l4 = null;
 String l5 = null;
+String secretCode = null;
 /*
 HOW TO ADD ANOTHER LETTER
 1. Add another string under the SafeCracker class above this comment. Name it l
@@ -27,6 +28,7 @@ HOW TO ADD ANOTHER LETTER
 :(
 5. At the bottom of the cracker() void, find the line that runs the tryCode() void. Add in the new l int.
 6. Add a new bracket at the end.
+7. Change the message in the tryCode() void to reflect the new character limit.
 
 */
 
@@ -40,6 +42,7 @@ HOW TO ADD ANOTHER LETTER
 	public static void main(String[] args) {
 		SafeCracker sc = new SafeCracker();
 		System.out.println("sc.crackthesafe");
+		sc.tryCode("Start#$%^");
 		sc.crackTheSafe();
 		
 	}
@@ -509,10 +512,15 @@ HOW TO ADD ANOTHER LETTER
 		
 	
 	 void tryCode(String guess) {
+		 if(guess.equals("Start#$%^")) {
+			 secretCode = JOptionPane.showInputDialog("Please enter your new password. Password must be 5 characters or less and \n may not contain symbols, numbers, or capital letters");
+			 if(secretCode.length()>5) {
+				 JOptionPane.showMessageDialog(null, "That's too long! try again!");
+				 tryCode("Start#$%^");
+			 }
+		 }
+		 else
 		System.out.println("trying " + guess);
-
-		String secretCode = "civic";
-
 		if (guess.equals(secretCode)) {
 			JOptionPane.showMessageDialog(null, "Congratulations! You cracked the safe with " + guess);
 			playTheSoundOfSuccess();
