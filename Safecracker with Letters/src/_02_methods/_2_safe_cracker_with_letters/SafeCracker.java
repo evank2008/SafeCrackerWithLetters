@@ -16,6 +16,7 @@ String l2 = null;
 String l3 = null;
 String l4 = null;
 String l5 = null;
+String l6 = null;
 String secretCode = null;
 /*
 HOW TO ADD ANOTHER LETTER
@@ -58,6 +59,93 @@ HOW TO ADD ANOTHER LETTER
 
 	void cracker() {
 		System.out.println("cracker ran");
+		for(int dig6 = 0;6<=26;) {
+			switch (dig6) {
+			case 0:
+				l6="";
+				break;
+			case 1:
+				l6 = "a";
+				break;
+			case 2:
+				l6 = "b";
+				break;
+			case 3:
+				l6 = "c";
+				break;
+			case 4:
+				l6 = "d";
+				break;
+			case 5:
+				l6 = "e";
+				break;
+			case 6:
+				l6 = "f";
+				break;
+			case 7:
+				l6 = "g";
+				break;
+			case 8:
+				l6 = "h";
+				break;
+			case 9:
+				l6 = "i";
+				break;
+			case 10:
+				l6 = "j";
+				break;
+			case 11:
+				l6 = "k";
+				break;
+			case 12:
+				l6 = "l";
+				break;
+			case 13:
+				l6 = "m";
+				break;
+			case 14:
+				l6 = "n";
+				break;
+			case 15:
+				l6 = "o";
+				break;
+			case 16:
+				l6 = "p";
+				break;
+			case 17:
+				l6 = "q";
+				break;
+			case 18:
+				l6 = "r";
+				break;
+			case 19:
+				l6 = "s";
+				break;
+			case 20:
+				l6 = "t";
+				break;
+			case 21:
+				l6 = "u";
+				break;
+			case 22:
+				l6 = "v";
+				break;
+			case 23:
+				l6 = "w";
+				break;
+			case 24:
+				l6 = "x";
+				break;
+			case 25:
+				l6 = "y";
+				break;
+			case 26:
+				l6 = "z";
+				break;
+			default:
+				System.out.println("error");
+				//this bracket is for the switch
+			} 
 		for(int dig5 = 0;dig5<=26;) {
 			switch (dig5) {
 			case 0:
@@ -492,7 +580,7 @@ HOW TO ADD ANOTHER LETTER
 					System.out.println("error");
 					//this bracket is for the switch
 				}
-				tryCode(l5+l4+l3+l2+l1);
+				tryCode(l6+l5+l4+l3+l2+l1);
 				dig1++;
 				}
 			//this bracket is for digit 1
@@ -505,16 +593,23 @@ HOW TO ADD ANOTHER LETTER
 		}
 		dig5++;
 		}
+		dig6++;
+		if(dig6==27) {
+			break;
+		}
+		}
 		JOptionPane.showMessageDialog(null, "Amazing! I couldn't crack your code.");
 	}
+		
+	
 	
 	//this bracket is for the void oneLetter
 		
 	
 	 void tryCode(String guess) {
 		 if(guess.equals("Start#$%^")) {
-			 secretCode = JOptionPane.showInputDialog("Please enter your new password. Password must be 5 characters or less and \n may not contain symbols, numbers, or capital letters");
-			 if(secretCode.length()>5) {
+			 secretCode = JOptionPane.showInputDialog("Please enter your new password. Password must be 6 characters or less and \n may not contain symbols, numbers, or capital letters");
+			 if(secretCode.length()>6) {
 				 JOptionPane.showMessageDialog(null, "That's too long! try again!");
 				 tryCode("Start#$%^");
 			 }
